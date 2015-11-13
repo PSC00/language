@@ -11,11 +11,14 @@
 <br>
 {% if categories %}
     <h2>程式語言類別:</h2>
-    <ul>
+    <table>
+    <tr><th>類別名稱</th></tr>
     {% for category in categories %}
-    <li>{{category.name}}</li>
+    <tr>
+      <td><a href={% url 'wiki:category' category.name %}>{{category.name}}</a></td>
+    </tr>
     {% endfor %}
-    </ul>
+    </table>
 {% else %}
     <p><strong>目前尚未設定程式語言類別。</strong></p>
 {% endif %}
